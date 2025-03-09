@@ -22,3 +22,9 @@ Inclused the whole path.
 Place inside imports - `@using ServerManagement.Components.Controls`. 
 _Imports.razor - central place for imports.
 
+#### Implicit Expression
+Replace implicit with `@` variables.
+- Create server application
+    - folder - Models
+    - ServerModel
+    - call model in ServerComponent
