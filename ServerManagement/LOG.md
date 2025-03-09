@@ -1,4 +1,5 @@
-﻿## Types of Components
+﻿# Blasor SSR
+## Types of Components
 1. Routable components
 1. non-routable components
 
@@ -28,3 +29,11 @@ Replace implicit with `@` variables.
     - folder - Models
     - ServerModel
     - call model in ServerComponent
+
+#### Explicit 
+- Display isOnline
+- `@(server.IsOnline?"online":"offline")`
+- any c# could be used as explicit
+
+#### Static data repository
+- Model > ServersRepositoryModel
