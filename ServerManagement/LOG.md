@@ -37,3 +37,30 @@ Replace implicit with `@` variables.
 
 #### Static data repository
 - Model > ServersRepositoryModel
+
+#### Looping
+- dynamically outpust servercomponent
+- That is an unordered list (`<ul>`) with a single empty list item (`<li></li>`). It creates a bullet point with no content inside.
+
+#### Buttons
+- Create city repositories
+- `<button>`
+
+#### Static resources (images etc.)
+- `app.UseStaticFiles()` - maps the requests that look for static resources to static resources
+- static resources should be placed in `wwwroot` folder
+
+#### Routable component
+- new page Page > EditServer.razor
+- `@page "/servers/edit"`
+- link from each link to this page
+- `&nbsp;` - space
+
+#### Route parameters & Route constraints
+- to send info - use route parameter
+- Edit page need to accept route parameter
+    - `@page "/servers/{id}"`
+    - `[Parameter]`
+    - it should accept only int.
+- Root constraints > limits the type
+    - `@page "/servers/{id:int}"`
