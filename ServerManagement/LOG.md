@@ -97,4 +97,20 @@ Replace implicit with `@` variables.
 #### NavigationManager & Dependency Injection
 - After submit -> go back
 - `@inject NavigationManager NavigationManager`
+
+#### Routable component
+- Add new page > AddServer
+- Need to use Form for **delete**
+- Add unique form id
+- as blazor SSR static server side rendering is only server side
+- there is no interactivity at all
+- so the button does not work.
+- we need a form to submit data and handle event
+- We need event handler (state management)
+    - for now just use navigation to update the page (it's http request)
+    - better to use anchor points
+
+#### Stream rendering
+- `@attribute [StreamRendering]` - handles waiting time let's say
+- `<script src="_framework/blazor.web.js"></script>`
 - 
