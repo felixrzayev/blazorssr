@@ -11,12 +11,12 @@
       "RelativeMoniker": "D:0:0:{29C6EF17-B9C0-48E9-8E90-1348348A0490}|ServerManagement\\ServerManagement.csproj|solutionrelative:servermanagement\\log.md||{EFC0BB08-EA7D-40C6-A696-C870411A895B}"
     },
     {
-      "AbsoluteMoniker": "D:0:0:{29C6EF17-B9C0-48E9-8E90-1348348A0490}|ServerManagement\\ServerManagement.csproj|c:\\users\\e250577\\source\\repos\\blazorssr\\servermanagement\\components\\pages\\servers.razor||{40D31677-CBC0-4297-A9EF-89D907823A98}",
-      "RelativeMoniker": "D:0:0:{29C6EF17-B9C0-48E9-8E90-1348348A0490}|ServerManagement\\ServerManagement.csproj|solutionrelative:servermanagement\\components\\pages\\servers.razor||{40D31677-CBC0-4297-A9EF-89D907823A98}"
+      "AbsoluteMoniker": "D:0:0:{29C6EF17-B9C0-48E9-8E90-1348348A0490}|ServerManagement\\ServerManagement.csproj|c:\\users\\e250577\\source\\repos\\blazorssr\\servermanagement\\models\\server.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}",
+      "RelativeMoniker": "D:0:0:{29C6EF17-B9C0-48E9-8E90-1348348A0490}|ServerManagement\\ServerManagement.csproj|solutionrelative:servermanagement\\models\\server.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}"
     },
     {
-      "AbsoluteMoniker": "D:0:0:{29C6EF17-B9C0-48E9-8E90-1348348A0490}|ServerManagement\\ServerManagement.csproj|c:\\users\\e250577\\source\\repos\\blazorssr\\servermanagement\\components\\layout\\navmenu.razor||{40D31677-CBC0-4297-A9EF-89D907823A98}",
-      "RelativeMoniker": "D:0:0:{29C6EF17-B9C0-48E9-8E90-1348348A0490}|ServerManagement\\ServerManagement.csproj|solutionrelative:servermanagement\\components\\layout\\navmenu.razor||{40D31677-CBC0-4297-A9EF-89D907823A98}"
+      "AbsoluteMoniker": "D:0:0:{29C6EF17-B9C0-48E9-8E90-1348348A0490}|ServerManagement\\ServerManagement.csproj|c:\\users\\e250577\\source\\repos\\blazorssr\\servermanagement\\components\\pages\\servers.razor||{40D31677-CBC0-4297-A9EF-89D907823A98}",
+      "RelativeMoniker": "D:0:0:{29C6EF17-B9C0-48E9-8E90-1348348A0490}|ServerManagement\\ServerManagement.csproj|solutionrelative:servermanagement\\components\\pages\\servers.razor||{40D31677-CBC0-4297-A9EF-89D907823A98}"
     }
   ],
   "DocumentGroupContainers": [
@@ -29,20 +29,29 @@
           "SelectedChildIndex": 2,
           "Children": [
             {
-              "$type": "Bookmark",
-              "Name": "ST:0:0:{e1b7d1f8-9b3c-49b1-8f4f-bfc63a88835d}"
+              "$type": "Document",
+              "DocumentIndex": 3,
+              "Title": "Servers.razor",
+              "DocumentMoniker": "C:\\Users\\E250577\\source\\repos\\blazorssr\\ServerManagement\\Components\\Pages\\Servers.razor",
+              "RelativeDocumentMoniker": "ServerManagement\\Components\\Pages\\Servers.razor",
+              "ToolTip": "C:\\Users\\E250577\\source\\repos\\blazorssr\\ServerManagement\\Components\\Pages\\Servers.razor",
+              "RelativeToolTip": "ServerManagement\\Components\\Pages\\Servers.razor",
+              "ViewState": "AgIAAAAAAAAAAAAAAAAAAAAAAAAPAAAAAAAAAA==",
+              "Icon": "ae27a6b0-e345-4288-96df-5eaf394ee369.000759|",
+              "WhenOpened": "2025-03-10T10:21:59.779Z",
+              "EditorCaption": ""
             },
             {
               "$type": "Document",
-              "DocumentIndex": 3,
-              "Title": "NavMenu.razor",
-              "DocumentMoniker": "C:\\Users\\E250577\\source\\repos\\blazorssr\\ServerManagement\\Components\\Layout\\NavMenu.razor",
-              "RelativeDocumentMoniker": "ServerManagement\\Components\\Layout\\NavMenu.razor",
-              "ToolTip": "C:\\Users\\E250577\\source\\repos\\blazorssr\\ServerManagement\\Components\\Layout\\NavMenu.razor",
-              "RelativeToolTip": "ServerManagement\\Components\\Layout\\NavMenu.razor",
-              "ViewState": "AgIAAAAAAAAAAAAAAAAAABgAAAA3AAAAAAAAAA==",
-              "Icon": "ae27a6b0-e345-4288-96df-5eaf394ee369.000759|",
-              "WhenOpened": "2025-03-10T04:57:53.342Z",
+              "DocumentIndex": 2,
+              "Title": "Server.cs",
+              "DocumentMoniker": "C:\\Users\\E250577\\source\\repos\\blazorssr\\ServerManagement\\Models\\Server.cs",
+              "RelativeDocumentMoniker": "ServerManagement\\Models\\Server.cs",
+              "ToolTip": "C:\\Users\\E250577\\source\\repos\\blazorssr\\ServerManagement\\Models\\Server.cs",
+              "RelativeToolTip": "ServerManagement\\Models\\Server.cs",
+              "ViewState": "AgIAAAoAAAAAAAAAAAAkwAMAAAABAAAAAAAAAA==",
+              "Icon": "ae27a6b0-e345-4288-96df-5eaf394ee369.000738|",
+              "WhenOpened": "2025-03-10T10:02:04.355Z",
               "EditorCaption": ""
             },
             {
@@ -53,22 +62,9 @@
               "RelativeDocumentMoniker": "ServerManagement\\Components\\Pages\\EditServer.razor",
               "ToolTip": "C:\\Users\\E250577\\source\\repos\\blazorssr\\ServerManagement\\Components\\Pages\\EditServer.razor",
               "RelativeToolTip": "ServerManagement\\Components\\Pages\\EditServer.razor",
-              "ViewState": "AgIAAAAAAAAAAAAAAAAAAAYAAAAHAAAAAAAAAA==",
+              "ViewState": "AgIAAEEAAAAAAAAAAAAAAE0AAAArAAAAAAAAAA==",
               "Icon": "ae27a6b0-e345-4288-96df-5eaf394ee369.000759|",
               "WhenOpened": "2025-03-10T04:54:36.572Z",
-              "EditorCaption": ""
-            },
-            {
-              "$type": "Document",
-              "DocumentIndex": 2,
-              "Title": "Servers.razor",
-              "DocumentMoniker": "C:\\Users\\E250577\\source\\repos\\blazorssr\\ServerManagement\\Components\\Pages\\Servers.razor",
-              "RelativeDocumentMoniker": "ServerManagement\\Components\\Pages\\Servers.razor",
-              "ToolTip": "C:\\Users\\E250577\\source\\repos\\blazorssr\\ServerManagement\\Components\\Pages\\Servers.razor",
-              "RelativeToolTip": "ServerManagement\\Components\\Pages\\Servers.razor",
-              "ViewState": "AgIAABIAAAAAAAAAAAAAACsAAAAAAAAAAAAAAA==",
-              "Icon": "ae27a6b0-e345-4288-96df-5eaf394ee369.000759|",
-              "WhenOpened": "2025-03-05T11:30:35.37Z",
               "EditorCaption": ""
             },
             {
@@ -79,7 +75,7 @@
               "RelativeDocumentMoniker": "ServerManagement\\LOG.md",
               "ToolTip": "C:\\Users\\E250577\\source\\repos\\blazorssr\\ServerManagement\\LOG.md",
               "RelativeToolTip": "ServerManagement\\LOG.md",
-              "ViewState": "AgIAACcAAAAAAAAAAAAmwDcAAAAcAAAAAAAAAA==",
+              "ViewState": "AgIAAE0AAAAAAAAAAAAmwGMAAAACAAAAAAAAAA==",
               "Icon": "ae27a6b0-e345-4288-96df-5eaf394ee369.001818|",
               "WhenOpened": "2025-03-05T11:25:09.624Z",
               "EditorCaption": ""
