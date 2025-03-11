@@ -158,3 +158,37 @@ Replace implicit with `@` variables.
     - `Program.cs` > `app.MapRazorComponents<App>().AddInteractiveServerRenderMode();`
     - Dependency injection part: `builder.Services.AddRazorComponents().AddInteractiveServerComponents();`
     - `Servers.razor` > specify render mode in `<ServerComponent @rendermode="InteractiveServer"></ServerComponent>`
+
+#### Interactivity Location
+- Inside the ServerComponent we added rendermode.
+- we set it to be interactive
+- therefore this location is called interactive location
+- Two different categories of interactivity:
+    1. location is set on the page or set on the component. (component itself or parent component)
+    1. at Global level - App.razor > `<Routes />` > `<Routes @rendermode="InteractiveServer"/>` entire application will use server interactivity
+- ***Recommendation: Specify interectivity at component level.***
+    - not inside of the file itself, but where you use that component.
+
+#### Main aspects of interactive components
+- Stateful application: Once you use interactive component in Blazor the app becomes statefull app (**at least for that component**)
+- 3 different main aspects: 
+    - **View**: UI or Page, what users see
+    - **Event**: When user interacts with view
+    - **State**: whatever we do, it changes the internal state variables. Handling of events
+
+    - When *State* changes it modifies *View*.
+
+### Event Handling: Passing information
+- Handle `onClick` for city names in Servers.razor
+- create a function to handle click and receive the city name
+- `@onclick="@(() => {SelectCity(city);}`
+- now change state variable
+- how? first declare it!
+- Dont forget `@rendermode InteractiveServer`
+- `this.servers = ServersRepositoryModels.GetServersByCity(this.selectedCity);`
+- Highlight currect city (card border)
+
+### Update state variables with OnChange event
+- Add search bar
+- `ChangeEventArgs`
+- Add methods to handle search
