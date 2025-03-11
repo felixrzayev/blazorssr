@@ -1,34 +1,21 @@
-﻿@if (server != null) {
-	<EditForm Enhance="true" Model="server" FormName="serverComponentForm" OnSubmit="ChangeServerStatus">
-		<InputNumber @bind-Value="server.Id" hidden></InputNumber>
-		<InputText @bind-Value="server.Name" hidden></InputText>
-		<InputText @bind-Value="server.City" hidden></InputText>
-		<InputCheckbox @bind-Value="server.IsOnline" hidden></InputCheckbox>
-
-		<div data-name="@server.Name"
-		data-status="Server is @(server.IsOnline?"online":"offline")"
-		style="@($"color:{(server.IsOnline ? "green" : "red")}")">
-			@server.Name is in @server.City that is @(server.IsOnline ? "online" : "offline")
-			&nbsp;
-			<button type="submit" class="btn bnt-primary">Turn On/Off</button>
-		</div>
-	</EditForm>
+﻿@if (server != null) 
+{
+	<div data-name="@server.Name"
+	data-status="Server is @(server.IsOnline?"online":"offline")"
+	style="@($"color:{(server.IsOnline ? "green" : "red")}")">
+		@server.Name is in @server.City that is @(server.IsOnline ? "online" : "offline")
+		&nbsp;
+		<button type="button" class="btn bnt-primary" @onclick="ChangeStatus">Turn On/Off</button>
+	</div>
 }
 
 
 @code {
-	// once submit is clicked - it needs to come here
-	[SupplyParameterFromForm]
-	private Server? server { get; set; }
+	private Server? server { get; set; } = new Server { Name = "Server 1", City = "Baku" };
 
-	protected override void OnParametersSet()
-	{
-		server ??= new Server { Name = "Server 1", City = "Baku"};
-	}
-
-	private void ChangeServerStatus() {
+	private void ChangeStatus() {
 		if (server != null) {
-			server.IsOnline = !server.IsOnline;
+			this.server.IsOnline = !this.server.IsOnline;
 		}
 	}
 }

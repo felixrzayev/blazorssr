@@ -152,3 +152,9 @@ Replace implicit with `@` variables.
 - It's already interactive, no?
 - Yes, remove Enhanced Handling
 - We will use **Server Interactivity**
+- Instead of `<EditForm>` and `submit` button
+- Use `"button"` and `@onclick="changeStatus"`
+- How to enable **Server Interactivity**?
+    - `Program.cs` > `app.MapRazorComponents<App>().AddInteractiveServerRenderMode();`
+    - Dependency injection part: `builder.Services.AddRazorComponents().AddInteractiveServerComponents();`
+    - `Servers.razor` > specify render mode in `<ServerComponent @rendermode="InteractiveServer"></ServerComponent>`
