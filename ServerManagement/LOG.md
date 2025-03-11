@@ -113,4 +113,42 @@ Replace implicit with `@` variables.
 #### Stream rendering
 - `@attribute [StreamRendering]` - handles waiting time let's say
 - `<script src="_framework/blazor.web.js"></script>`
-- 
+
+## Server Interactivity
+- What is not interactive? request - answer then page reloads
+- Interactivity in blazor -> should work like windows application
+    - in traditional web app. the whole page gets refreshed
+    - to solve the problem, we update only the part that needs to be updated
+    - no need for javascript
+    - WebAssembly could be used instead
+
+### Enhanced Navigation
+- when creating Blazor web app template - enhanced navigation is enabled
+- `<script src="_framework/blazor.web.js"></script>` - through this line in `App.razor`
+
+### **Enhanced form handling**
+- Dynamic forms
+- Add `ServerComponent` in `Server.razor`
+- Add a button in `ServerComponent` to dynamically change the status
+- in blazor only way to do it - button type - Submit
+- that means we need to use `<EditForm>`
+- add `OnSubmit`, `[SupplyParameterFromForm]`, `OnParametersSet()`, `ChangeServerStatus()`
+- add hidden values to send back
+- now, the whole page gets reloaded. The logic works but need to fix the reload issue
+- Just need to add attribute in `<EditForm>` > `Enhance="true"`
+
+### Server Interactivity
+- Instead of using the blazer app.js to send fetch API requests to the web server
+- server interactivity is using blazer JS to set up a **WebSocket** channel
+- that is called **Signal** Channel
+- how it works, the first http request goes to the server and then it should come back
+- that makes js file available inside the browser - and then immediately WebSocket channel (Signal) is established. 
+- backend holds a memory of the browser
+- in traditional - backend does not hold any memory of backend. 
+- thus with websocket > the backend is completely different.
+
+#### Enable Server Interactivity
+- Make ServerComponent interactive
+- It's already interactive, no?
+- Yes, remove Enhanced Handling
+- We will use **Server Interactivity**
