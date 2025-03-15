@@ -192,3 +192,27 @@ Replace implicit with `@` variables.
 - Add search bar
 - `ChangeEventArgs`
 - Add methods to handle search
+
+#### Data binding
+- remove onChange for filter
+- add `@bind-value="searchFilter" `
+- blazor behind the scenes uses OnChange
+- get and set inside the value to immidiatly react to changes
+
+### Interactive EditForm
+- `@rendermode InteractiveServer`
+- no need to have FormName and `[SupplyParameterFromForm(FormName = "formServer")]`
+- when rootable component is Interactive then `EditForm` is also interactive
+- so when submit button is clicked, the form no longer submitted back to the server with http post
+- it will sen message through the Signal channel and then event handler will be triggered
+- also we now have **data binding**
+
+#### Virtualization
+- if list is long
+- whenever you use `foreach`, you can use virtualization
+- and if the height of the items is the same
+- `<Virtualize>` instead of `foreach`
+- no wait time as in foreach
+- it knows height of the items, and viewpoint
+- it calculates how many items to show
+- as you scroll it shows only rendered items

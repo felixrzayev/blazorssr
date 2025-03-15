@@ -19,33 +19,34 @@
 
 <br />
 
-@*Not needed*@
-@* <ServerComponent @rendermode="InteractiveServer"></ServerComponent> *@
 
 <div class="input-group mb-3">
-	<input type="text" class="form-control" placeholder="Search Servers" @onchange="ServerFilterChange"/>
+	<input type="text" class="form-control" placeholder="Search Servers" 
+	@bind-value="searchFilter" 
+	@bind-value:event="oninput"/>
 	<button class="btn btn-outline-secondary" type="button" id="button-search" @onclick="HandleSearch">Search</button>
 </div>
 
 <br />
 
 <ul>
-	@foreach(var server in servers) {
-		<li>@server.Name in @server.City is 
+	<Virtualize Items="this.servers" Context="server">
+		<li>
+			@server.Name in @server.City is
 			<span style="color:@(server.IsOnline ? "green" : "red")">
 				@(server.IsOnline ? "online" : "offline")
 			</span>
 			&nbsp;
 			<a href="/servers/@(server.Id)" class="btn btn-link">Edit</a>
 			&nbsp;
-			<EditForm 
-			Model="server" 
-			FormName="@($"form-server-{server.Id}")"
-			OnValidSubmit="@(() => {DeleteServer(server.Id);})">
+			<EditForm Model="server"
+					  FormName="@($"form-server-{server.Id}")"
+					  OnValidSubmit="@(() => {DeleteServer(server.Id);})">
 				<button type="submit" class="btn btn-outline-primary">Delete</button>
 			</EditForm>
 		</li>
-	}
+	</Virtualize>
+		
 </ul>
 <p>
 	<a href="/servers/add" class="btn btn-primary">Add Server</a>
@@ -59,7 +60,17 @@
 
 	private string selectedCity = "Toronto";
 
-	private string searchFilter = "";
+	private string _searchFilter = "";
+	private string searchFilter { 
+		get => _searchFilter; 
+		set
+		{
+			_searchFilter = value;
+			this.servers = ServersRepositoryModels.SearchServers(_searchFilter);
+
+		}  
+	}
+
 
 	private void DeleteServer(int id) 
 	{
@@ -75,10 +86,6 @@
 	{
 		this.selectedCity = cityName;
 		this.servers = ServersRepositoryModels.GetServersByCity(this.selectedCity);
-	}
-
-	private void ServerFilterChange(ChangeEventArgs args) {
-		searchFilter = args.Value?.ToString() ?? string.Empty;
 	}
 
 	private void HandleSearch() {
