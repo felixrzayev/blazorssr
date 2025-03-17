@@ -8,6 +8,21 @@
 			@(Server.IsOnline ? "online" : "offline")
 		</span>
 		&nbsp;
+		@if (Server.IsOnline) {
+			<button type="button" 
+				class="btn btn-outline-danger"
+					@onclick="@( () => {Server.IsOnline = false; } )">
+				Turn Off
+			</button>
+		} else {
+			<button type="button" 
+				class="btn btn-outline-success"
+					@onclick="@( () => {Server.IsOnline = true; } )">
+				Turn On
+			</button>
+		}
+
+		&nbsp;
 		<a href="/servers/@(Server.Id)" class="btn btn-link">Edit</a>
 		&nbsp;
 		<EditForm Model="Server"
@@ -21,7 +36,6 @@
 @code {
 	[Parameter]
 	public Server? Server { get; set; }
-	// [Parameter] public EventCallback<Server> OnServerSelected { get; set; }
 	private void DeleteServer(int id)
 	{
 		if (id > 0)

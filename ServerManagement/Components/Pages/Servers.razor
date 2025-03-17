@@ -4,67 +4,42 @@
 @rendermode InteractiveServer
 
 <h3>Servers</h3>
-<div style="display: flex; gap: 15px; flex-wrap: wrap; justify-content: left;">
-	@foreach (var city in cities)
-	{
-		@* <div class="card @(selectedCity.Equals(city, StringComparison.OrdinalIgnoreCase) ? "border-primary" : "")"> *@
-		<div class=@(this.selectedCity == city ? "card border-primary" : "card")>
-			<img src="images/@(city).png" class="card-img-top" alt="@city">
-			<div class="card-body">
-				<button type="button" class="btn btn-primary" @onclick="@(() => {SelectCity(city);})">@city</button>
-			</div>
-		</div>
-	}
-</div>
+<CityListComponent @ref="cityListComponent" SelectCityCallback="HandleCitySelection"></CityListComponent>
 
 <br />
 
-<div class="input-group mb-3">
-	<input type="text" class="form-control" placeholder="Search Servers" 
-	@bind-value="searchFilter" 
-	@bind-value:event="oninput"/>
-	<button class="btn btn-outline-secondary" type="button" id="button-search" @onclick="HandleSearch">Search</button>
-</div>
+<SearchComponent 
+SearchServerCallback="HandleSearch"
+@ref="searchComponent"
+></SearchComponent>
 
 <br />
 
 <ServerListComponent 
-	@rendermode="InteractiveServer" 
-	CityName="@this.selectedCity"></ServerListComponent>
+@rendermode="InteractiveServer"
+CityName="@this.selectedCity"
+SearchFilter="@searchFilter"></ServerListComponent>
 
 <p>
 	<a href="/servers/add" class="btn btn-primary">Add Server</a>
 </p>
 
 @code {
-	private List<string> cities = CityRepository.GetCities();
-
-	// this is just initialization. 
-
 	private string selectedCity = "Toronto";
+	private string searchFilter = "";
 
-	private string _searchFilter = "";
-	private string searchFilter { 
-		get => _searchFilter; 
-		set
-		{
-			_searchFilter = value;
-			// this.servers = ServersRepositoryModels.SearchServers(_searchFilter);
+	private CityListComponent? cityListComponent;
+	private SearchComponent? searchComponent;
 
-		}  
+	private void HandleCitySelection(string cityName) {
+		selectedCity = cityName;
+		this.searchFilter = string.Empty;
+		searchComponent?.ClearSearchFilter();
 	}
 
-
-	
-
-	private void SelectCity(string cityName) 
+	private void HandleSearch(string searchFilter)
 	{
-		this.selectedCity = cityName;
-		// this.servers = ServersRepositoryModels.GetServersByCity(this.selectedCity);
-	}
-
-	private void HandleSearch() {
-		// this.servers = ServersRepositoryModels.SearchServers(searchFilter);
-		this.selectedCity = string.Empty;
+		this.searchFilter = searchFilter;
+		cityListComponent?.ClearSelection();
 	}
 }

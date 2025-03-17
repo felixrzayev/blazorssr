@@ -3,7 +3,7 @@
 	<ul>
 		<Virtualize Items="this.servers" Context="server">
 			<ServerListItemComponent 
-				Server="server"></ServerListItemComponent>
+			Server="server"></ServerListItemComponent>
 		</Virtualize>
 
 	</ul>
@@ -13,11 +13,20 @@
 @code {
 	[Parameter]
 	public string? CityName { get; set; }
+	[Parameter]
+	public string SearchFilter { get; set; } = "";
+
 	private List<Server>? servers;
 
 	protected override void OnParametersSet()
 	{
-		servers = ServersRepositoryModels.GetServersByCity(CityName??"Toronto");
+		if (string.IsNullOrWhiteSpace(this.SearchFilter)) 
+		{
+			servers = ServersRepositoryModels.GetServersByCity(CityName ?? "Toronto");
+
+		} else {
+			servers = ServersRepositoryModels.SearchServers(this.SearchFilter);
+		}
 	}
 
 	

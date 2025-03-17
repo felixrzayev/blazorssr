@@ -238,3 +238,15 @@ Replace implicit with `@` variables.
 
 ### Break down into smaller components
 - ServerListItemComponent
+- Extract city components (city selection)
+
+### EventCallback
+- EventCallback is essentially a parameter
+- call it as `SelectCityCallback.InvokeAsync(cityName);`
+- Get's called in child component > then in parent
+
+### Reference a child component
+- call child's method
+- reference it `@ref="cityListComponent"`
+- Clean search when city selected
+- Clean city selection when searched
