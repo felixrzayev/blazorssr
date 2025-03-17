@@ -216,3 +216,25 @@ Replace implicit with `@` variables.
 - it knows height of the items, and viewpoint
 - it calculates how many items to show
 - as you scroll it shows only rendered items
+
+# Thinking in components
+- Separation of concern
+- Single responsibility principle
+    - One component should only change due to one reason
+
+## Extract server components
+- ServerListComponent `<ServerListComponent></ServerListComponent>`
+- Add render mode
+
+## Communicate between components
+- use **Component Parameters**
+- Parent > Child component
+- define property eg. CityName
+    - `[Parameter]`
+    - use HTML attribute to specify
+    - how can I know if parameter has received the value?
+    - override - `OnParametersSet()` > call `GetServers` here
+- use a variable which is change based on called method - `@this.selectedCity`
+
+### Break down into smaller components
+- ServerListItemComponent

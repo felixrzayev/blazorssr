@@ -1,0 +1,24 @@
+﻿@if (this.servers != null && this.servers.Count > 0)
+{
+	<ul>
+		<Virtualize Items="this.servers" Context="server">
+			<ServerListItemComponent 
+				Server="server"></ServerListItemComponent>
+		</Virtualize>
+
+	</ul>
+}
+
+
+@code {
+	[Parameter]
+	public string? CityName { get; set; }
+	private List<Server>? servers;
+
+	protected override void OnParametersSet()
+	{
+		servers = ServersRepositoryModels.GetServersByCity(CityName??"Toronto");
+	}
+
+	
+}

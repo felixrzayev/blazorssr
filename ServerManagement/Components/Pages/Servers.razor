@@ -19,7 +19,6 @@
 
 <br />
 
-
 <div class="input-group mb-3">
 	<input type="text" class="form-control" placeholder="Search Servers" 
 	@bind-value="searchFilter" 
@@ -29,25 +28,10 @@
 
 <br />
 
-<ul>
-	<Virtualize Items="this.servers" Context="server">
-		<li>
-			@server.Name in @server.City is
-			<span style="color:@(server.IsOnline ? "green" : "red")">
-				@(server.IsOnline ? "online" : "offline")
-			</span>
-			&nbsp;
-			<a href="/servers/@(server.Id)" class="btn btn-link">Edit</a>
-			&nbsp;
-			<EditForm Model="server"
-					  FormName="@($"form-server-{server.Id}")"
-					  OnValidSubmit="@(() => {DeleteServer(server.Id);})">
-				<button type="submit" class="btn btn-outline-primary">Delete</button>
-			</EditForm>
-		</li>
-	</Virtualize>
-		
-</ul>
+<ServerListComponent 
+	@rendermode="InteractiveServer" 
+	CityName="@this.selectedCity"></ServerListComponent>
+
 <p>
 	<a href="/servers/add" class="btn btn-primary">Add Server</a>
 </p>
@@ -56,7 +40,6 @@
 	private List<string> cities = CityRepository.GetCities();
 
 	// this is just initialization. 
-	private List<Server> servers = ServersRepositoryModels.GetServersByCity("Montreal");
 
 	private string selectedCity = "Toronto";
 
@@ -66,30 +49,22 @@
 		set
 		{
 			_searchFilter = value;
-			this.servers = ServersRepositoryModels.SearchServers(_searchFilter);
+			// this.servers = ServersRepositoryModels.SearchServers(_searchFilter);
 
 		}  
 	}
 
 
-	private void DeleteServer(int id) 
-	{
-		if (id > 0) 
-		{
-			ServersRepositoryModels.DeleteServer(id);
-			NavigationManager.NavigateTo("/servers");
-
-		}
-	}
+	
 
 	private void SelectCity(string cityName) 
 	{
 		this.selectedCity = cityName;
-		this.servers = ServersRepositoryModels.GetServersByCity(this.selectedCity);
+		// this.servers = ServersRepositoryModels.GetServersByCity(this.selectedCity);
 	}
 
 	private void HandleSearch() {
-		this.servers = ServersRepositoryModels.SearchServers(searchFilter);
+		// this.servers = ServersRepositoryModels.SearchServers(searchFilter);
 		this.selectedCity = string.Empty;
 	}
 }

@@ -8,23 +8,23 @@
     "net8.0": []
   },
   "packageFolders": {
-    "C:\\Users\\Farid\\.nuget\\packages\\": {},
+    "C:\\Users\\E250577\\.nuget\\packages\\": {},
     "C:\\Program Files (x86)\\Microsoft Visual Studio\\Shared\\NuGetPackages": {}
   },
   "project": {
     "version": "1.0.0",
     "restore": {
-      "projectUniqueName": "C:\\Users\\Farid\\source\\repos\\BlazorDeepDive\\ServerManagement\\ServerManagement.csproj",
+      "projectUniqueName": "C:\\Users\\E250577\\source\\repos\\blazorssr\\ServerManagement\\ServerManagement.csproj",
       "projectName": "ServerManagement",
-      "projectPath": "C:\\Users\\Farid\\source\\repos\\BlazorDeepDive\\ServerManagement\\ServerManagement.csproj",
-      "packagesPath": "C:\\Users\\Farid\\.nuget\\packages\\",
-      "outputPath": "C:\\Users\\Farid\\source\\repos\\BlazorDeepDive\\ServerManagement\\obj\\",
+      "projectPath": "C:\\Users\\E250577\\source\\repos\\blazorssr\\ServerManagement\\ServerManagement.csproj",
+      "packagesPath": "C:\\Users\\E250577\\.nuget\\packages\\",
+      "outputPath": "C:\\Users\\E250577\\source\\repos\\blazorssr\\ServerManagement\\obj\\",
       "projectStyle": "PackageReference",
       "fallbackFolders": [
         "C:\\Program Files (x86)\\Microsoft Visual Studio\\Shared\\NuGetPackages"
       ],
       "configFilePaths": [
-        "C:\\Users\\Farid\\AppData\\Roaming\\NuGet\\NuGet.Config",
+        "C:\\Users\\E250577\\AppData\\Roaming\\NuGet\\NuGet.Config",
         "C:\\Program Files (x86)\\NuGet\\Config\\Microsoft.VisualStudio.FallbackLocation.config",
         "C:\\Program Files (x86)\\NuGet\\Config\\Microsoft.VisualStudio.Offline.config"
       ],
@@ -49,9 +49,9 @@
       "restoreAuditProperties": {
         "enableAudit": "true",
         "auditLevel": "low",
-        "auditMode": "all"
+        "auditMode": "direct"
       },
-      "SdkAnalysisLevel": "9.0.200"
+      "SdkAnalysisLevel": "9.0.100"
     },
     "frameworks": {
       "net8.0": {
@@ -75,7 +75,7 @@
             "privateAssets": "all"
           }
         },
-        "runtimeIdentifierGraphPath": "C:\\Program Files\\dotnet\\sdk\\9.0.200-preview.0.24575.35/PortableRuntimeIdentifierGraph.json"
+        "runtimeIdentifierGraphPath": "C:\\Program Files\\dotnet\\sdk\\9.0.101/PortableRuntimeIdentifierGraph.json"
       }
     }
   }
